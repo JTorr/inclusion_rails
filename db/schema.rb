@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140902161029) do
+ActiveRecord::Schema.define(version: 20140902190130) do
+
+  create_table "ruby_gems", force: true do |t|
+    t.string   "name"
+    t.string   "info"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
