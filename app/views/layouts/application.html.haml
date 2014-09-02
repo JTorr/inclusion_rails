@@ -27,11 +27,15 @@
           %span.icon-bar
         %a.navbar-brand(href="#") InclusionRails
         .navbar-collapse.collapse.navbar-responsive-collapse
-          %ul.nav.navbar-nav
-            %li= link_to "Link 1", "/path1"
-            %li= link_to "Link 2", "/path2"
-            %li= link_to "Link 3", "/path3"
-            %li= link_to "Link 3", "/path3"
+          %ul.nav.navbar-nav.pull-right
+            - if current_user
+              %li= link_to "Favorites", "/path1"
+              %li= link_to "Projects", "/path2"
+              %li= link_to "Sign Out", destroy_user_session_path, method: :delete
+            - else
+              / Not signed in
+              %li= link_to "Log In", new_user_session_path
+              %li= link_to "Sign Up", new_user_registration_path
 
     .container
       .row
