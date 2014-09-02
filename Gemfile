@@ -41,7 +41,7 @@ gem 'spring',        group: :development
 
 group :development do
   gem "pry-rails"
-  gem "pry-byebug"
+  #gem "pry-byebug"
   gem "quiet_assets"
   gem "annotate"
 end
@@ -59,3 +59,4 @@ gem "twitter-bootstrap-rails"
 gem "bootstrap_form"
 gem "better_errors", group: :development
 gem "binding_of_caller", group: :development
+gem "httparty"
