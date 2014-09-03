@@ -29,7 +29,7 @@
         .navbar-collapse.collapse.navbar-responsive-collapse
           %ul.nav.navbar-nav.pull-right
             - if current_user
-              %li= link_to "Favorites", "/path1"
+              %li= link_to "Favorites", gem_fetchers_path
               %li= link_to "Projects", "/path2"
               %li= link_to "Sign Out", destroy_user_session_path, method: :delete
             - else
