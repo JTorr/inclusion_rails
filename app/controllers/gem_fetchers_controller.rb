@@ -16,7 +16,8 @@ class GemFetchersController < ApplicationController
     if @gem_model.save
       redirect_to gem_fetcher_path(@gem_model), notice: "Gem saved"
     else
-      render :new, flash: "Please try again"
+      flash[:error] = "Gem could not be saved. Possible duplicate."
+      render :new
     end
   end
 
