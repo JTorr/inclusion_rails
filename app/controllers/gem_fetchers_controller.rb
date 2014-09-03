@@ -1,5 +1,6 @@
 class GemFetchersController < ApplicationController
   before_action :authenticate_user!
+
   def index
     @ruby_gems = RubyGem.all
   end

@@ -57,6 +57,6 @@ gem "erb2haml"
 gem "devise"
 gem "twitter-bootstrap-rails"
 gem "bootstrap_form"
-#gem "better_errors", group: :development
-#gem "binding_of_caller", group: :development
+gem "better_errors", group: :development
+gem "binding_of_caller", group: :development
 gem "httparty"
