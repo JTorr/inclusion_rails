@@ -1,5 +1,6 @@
-%h1 Hey There
-%p
-%br
-%p
-  =@gem_info
+%h1
+  My Gems
+  -@ruby_gems.each do |gem|
+    %h3= gem.name
+    %br
+    %p= gem.info
