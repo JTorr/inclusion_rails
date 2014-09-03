@@ -1,2 +1,8 @@
 -@gem_data.each do |gem|
-  %p= gem["name"]
+  %p
+    -# = link_to gem["name"], gem_fetchers_path, method: :post
+    = form_tag gem_fetchers_path, method: :post do
+      = label_tag gem["name"]
+      = hidden_field_tag :name, gem["name"]
+      = hidden_field_tag :info, gem["info"]
+      = submit_tag "Select"

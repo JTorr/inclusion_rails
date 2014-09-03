@@ -6,23 +6,22 @@ class GemFetchersController < ApplicationController
 
   def new
     @gem_model = RubyGem.new
-    if create_params
+    if params[:ruby_gem]
       @gem_data = GemFetcher.fetch create_params
     end
   end
 
   def create
-    @gem_data = GemFetcher.fetch create_params
-
-    # @gem_model = RubyGem.new name: @gem_data["name"], info: @gem_data["info"]
-    # if @gem_model.save
-    #   redirect_to gem_fetchers_path, notice: "Gem saved"
-    # else
-    #   render :new, flash: "You Suck"
-    # end
+    @gem_model = RubyGem.new name: params["name"], info: params["info"]
+    if @gem_model.save
+      redirect_to gem_fetcher_path(@gem_model), notice: "Gem saved"
+    else
+      render :new, flash: "Please try again"
+    end
   end
 
   def show
+    @gem_model = RubyGem.find(params[:id])
   end
 
   def create_params
