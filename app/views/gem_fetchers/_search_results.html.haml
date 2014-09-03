@@ -1,0 +1,6 @@
+-@gem_data.each do |gem| 
+  %p
+    =form_tag gem_fetchers_path, method: :post do
+      = hidden_field_tag :name, gem["name"]
+      = hidden_field_tag :info, gem["info"]
+      = submit_tag gem["name"], class: "btn btn-link"

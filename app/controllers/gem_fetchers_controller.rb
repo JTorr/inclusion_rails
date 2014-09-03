@@ -1,18 +1,26 @@
 class GemFetchersController < ApplicationController
   before_action :authenticate_user!
-  def index
+  def show
+    @gem_model = RubyGem.find params[:id]
   end 
   
   def new
+    @gem_model = RubyGem.new
+    if params[:ruby_gem]
+      @gem_data = GemFetcher.fetch create_params
+    end
   end
 
   def create
-    @gem_data = GemFetcher.fetch create_params
-    @gem_model = RubyGem.new @gem_data["name"], @gem_data["info"]
+    @gem_model = RubyGem.new name: params["name"], info: params["info"]
     if @gem_model.save
-      redirect_to gem_fetchers_path
+      redirect_to gem_fetcher_path(@gem_model), notice: "Gem Saved"
+    elsif @gem_model
+      flash[:warning] = "Already exists"
+      render :show 
     else
-      render :new, flash: "You Suck"
+      flash[:warning] = "Cannot Save"
+      render :new
     end
   end
 
