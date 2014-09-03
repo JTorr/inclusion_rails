@@ -1,3 +1,9 @@
-=bootstrap_form_tag url: '/gem_fetchers' do |f|
-  =f.text_field :ruby_gem
-  =f.submit "Find Gem"
+.form-search
+  =form_tag new_gem_fetcher_path, method: :get do
+    =label_tag :ruby_gem
+    =text_field_tag :ruby_gem
+    =submit_tag "Find Gem"
+
+.row
+  = if @gem_data
+    = render partial: "search_results"
