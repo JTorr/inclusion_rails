@@ -16,8 +16,10 @@ class GemFetchersController < ApplicationController
     @gem_model = RubyGem.new name: params["name"], info: params["info"]
     if @gem_model.save
       redirect_to gem_fetcher_path(@gem_model), notice: "Gem saved"
+    elsif @gem_model
+      render :show
     else
-      flash[:error] = "Gem could not be saved. Possible duplicate."
+      flash[:error] = "Gem could not be saved."
       render :new
     end
   end
