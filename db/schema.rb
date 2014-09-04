@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140902190130) do
+ActiveRecord::Schema.define(version: 20140904150442) do
+
+  create_table "favorites", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "ruby_gem_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "favorites", ["ruby_gem_id"], name: "index_favorites_on_ruby_gem_id"
+  add_index "favorites", ["user_id"], name: "index_favorites_on_user_id"
 
   create_table "ruby_gems", force: true do |t|
     t.string   "name"

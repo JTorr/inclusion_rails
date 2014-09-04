@@ -12,15 +12,13 @@ class GemFetchersController < ApplicationController
   end
 
   def create
-    @gem_model = RubyGem.new name: params["name"], info: params["info"]
+    @gem_model = RubyGem.new name: params[:name], info: params[:info]
     if @gem_model.save
-      redirect_to gem_fetcher_path(@gem_model), notice: "Gem Saved"
-    elsif @gem_model
+      redirect_to :back, notice: "Gem Saved"
+    else 
+      @gem_model = RubyGem.find_by_name(params[:name])
       flash[:warning] = "Already exists"
       render :show 
-    else
-      flash[:warning] = "Cannot Save"
-      render :new
     end
   end
 
