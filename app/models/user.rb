@@ -23,4 +23,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :favorites
+
+  def has_favorited?(ruby_gem)
+    favorites.where(ruby_gem: ruby_gem).exists?
+  end
 end
