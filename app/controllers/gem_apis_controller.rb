@@ -1,4 +1,4 @@
-class GemFetchersController < ApplicationController
+class GemApisController < ApplicationController
   before_action :authenticate_user!
   def show
     @gem_model = RubyGem.find params[:id]
@@ -7,7 +7,7 @@ class GemFetchersController < ApplicationController
   def new
     @gem_model = RubyGem.new
     if params[:ruby_gem]
-      @gem_data = GemFetcher.fetch create_params
+      @gem_data = GemApi.search create_params
     end
   end
 
