@@ -3,7 +3,7 @@
 %p= @gem_model.info
 
 - if current_user.has_favorited?(@gem_model)
-  = form_tag favorites_path(@gem_model), method: :post do
+  = form_tag favorite_path(@gem_model), method: :delete do
     = button_tag(type: 'submit', class: "btn btn-success") do
       = hidden_field_tag :id, @gem_model.id
       %i.fa.fa-star-o

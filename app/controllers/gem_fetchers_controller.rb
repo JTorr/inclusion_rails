@@ -13,14 +13,12 @@ class GemFetchersController < ApplicationController
   end
 
   def create
-    @gem_model = RubyGem.new name: params["name"], info: params["info"]
+    @gem_model = RubyGem.new name: params[:name], info: params[:info]
     if @gem_model.save
       redirect_to gem_fetcher_path(@gem_model)
-    elsif @gem_model
-      render :show
     else
-      flash[:error] = "Gem could not be saved."
-      render :new
+      @gem_model = RubyGem.find_by_name(params[:name])
+      render :show
     end
   end
 
