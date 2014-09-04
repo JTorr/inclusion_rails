@@ -1,2 +1,7 @@
-%h1 Favorites#index
-%p Find me in app/views/favorites/index.html.haml
+%h1 Favorites
+%p
+  -if @favorites
+    -@favorites.each do |fav|
+      %h3=fav.ruby_gem.name
+      %br
+      %p=fav.ruby_gem.info
