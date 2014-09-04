@@ -15,7 +15,7 @@ class GemFetchersController < ApplicationController
   def create
     @gem_model = RubyGem.new name: params["name"], info: params["info"]
     if @gem_model.save
-      redirect_to gem_fetcher_path(@gem_model), notice: "Gem saved"
+      redirect_to gem_fetcher_path(@gem_model)
     elsif @gem_model
       render :show
     else

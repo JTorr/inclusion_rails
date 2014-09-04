@@ -11,4 +11,11 @@
 
 class RubyGem < ActiveRecord::Base
   validates :name, uniqueness: true
+
+  # scope :favorited, -> {where("favorited is not null")}
+  #
+  # def favorited?
+  #   !favorited.blank?
+  # end
+
 end
