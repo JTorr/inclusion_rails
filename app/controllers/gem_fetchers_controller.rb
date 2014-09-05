@@ -29,4 +29,16 @@ class GemFetchersController < ApplicationController
   def create_params
     params.require(:ruby_gem)
   end
+
+
+  def self.parse(string)
+    @gem_list = []
+    lines = string.split("\n")
+    lines.each do |line|
+      if line =~ /^\s*gem/
+        @gem_list.push line.scan(/[A-Za-z0-9_-]+/)[1]
+        #@gem_list.push line.split(/\s+/)[1]
+      end
+    end
+  end
 end
