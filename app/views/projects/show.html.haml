@@ -1,2 +1,13 @@
 %h1 Projects#show
 %p Find me in app/views/projects/show.html.haml
+
+.form-search
+  =form_tag new_gem_fetcher_path, method: :get do
+    =label_tag :ruby_gem
+    =text_field_tag :ruby_gem
+    =submit_tag "Find Gem", class: "btn btn-info"
+
+.row
+  - if @gem_data
+    %br
+    = render partial: "search_results"
