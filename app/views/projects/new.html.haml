@@ -1,8 +1,6 @@
 %h1 Add New Project
-%p Find me in app/views/projects/new.html.haml
-
-.form-search
-  =form_tag new_gem_fetcher_path, method: :get do
-    =label_tag :ruby_gem
-    =text_field_tag :ruby_gem
-    =submit_tag "Find Gem", class: "btn btn-info"
+.well.well-lg
+  .form-search
+    =form_tag new_gem_fetcher_path, method: :get do
+      =text_area_tag :ruby_gem, "Gemfile", :rows => "20", :cols => "130"
+      =submit_tag "Find Gem", class: "btn btn-info"
