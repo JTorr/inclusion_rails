@@ -10,6 +10,6 @@
 #
 
 class RubyGem < ActiveRecord::Base
-  validates :name, uniqueness: true
+  validates_uniqueness_of :name
   has_many :favorites
 end

@@ -1,0 +1,9 @@
+.form-search
+  =form_tag new_gem_api_path, method: :get do
+    =label_tag :ruby_gem
+    =text_field_tag :ruby_gem
+    =submit_tag "Find Gem", class: "btn btn-info"
+
+.row
+  - if @gem_data
+    = render partial: "search_results"
