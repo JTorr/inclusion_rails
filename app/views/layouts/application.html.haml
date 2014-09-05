@@ -31,7 +31,7 @@
           %ul.nav.navbar-nav.pull-right
             - if current_user
               %li= link_to "Favorites", favorites_path
-              %li= link_to "Projects", "/path2"
+              %li= link_to "Projects", projects_index_path
               %li= link_to "Sign Out", destroy_user_session_path, method: :delete
             - else
               / Not signed in
