@@ -2,5 +2,5 @@
 .well.well-lg
   .form-search
     =form_tag new_gem_fetcher_path, method: :get do
-      =text_area_tag :ruby_gem, "Gemfile", :rows => "20", :cols => "130"
+      =text_area_tag :ruby_gem, "", :rows => "20", :cols => "130"
       =submit_tag "Find Gem", class: "btn btn-info"

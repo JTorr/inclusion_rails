@@ -1,7 +1,12 @@
 %h1 Favorites
-%p
-  -if @favorites
-    -@favorites.each do |fav|
-      %h3=fav.ruby_gem.name
-      %br
-      %p=fav.ruby_gem.info
+-if @favorites
+  -@favorites.each do |fav|
+    %table.table.table-striped
+      %tbody
+        %tr
+          %td Gem
+          %td=fav.ruby_gem.name.capitalize
+        %tr
+          %td Description
+          %td=fav.ruby_gem.info
+        %tr
