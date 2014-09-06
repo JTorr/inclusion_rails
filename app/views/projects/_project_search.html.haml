@@ -2,7 +2,6 @@
   %p
     = form_tag projects_show_path, method: :post do
       = hidden_field_tag :title, project["title"]
-      = hidden_field_tag :info, project["info"]
       = submit_tag project["title"], class: "btn btn-link"
 
 

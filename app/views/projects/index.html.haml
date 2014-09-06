@@ -9,10 +9,8 @@
     %table.table.table-striped
       %tbody
         %tr
-          %td=link_to "#{project.title.capitalize}", projects_show_path
-        %tr
+          %td= link_to project[:title], projects_show_path
 
--# =link_to "#{project.name.capitalize}", projects_show_path
 
 .row
   - if @projects

@@ -3,7 +3,7 @@
 
 .center.hero-unit
   .form-search
-    =form_tag new_gem_fetcher_path, method: :get do
+    =form_tag new_gem_api_path, method: :get do
       =label_tag :ruby_gem
       =text_field_tag :ruby_gem
       =submit_tag "Find Gem", class: "btn btn-danger"
