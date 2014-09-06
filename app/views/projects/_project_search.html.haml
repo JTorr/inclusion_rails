@@ -1,8 +1,5 @@
--@projects.each do |project|
-  %p
-    = form_tag projects_show_path, method: :post do
-      = hidden_field_tag :title, project["title"]
-      = submit_tag project["title"], class: "btn btn-link"
-
-
-#TODO: projects_show_path is not getting the project id
+-# -@projects.each do |project|
+-#   %p
+-#     = form_tag projects_show_path, method: :post do
+-#       = hidden_field_tag :title, project["title"]
+-#       = submit_tag project["title"], class: "btn btn-link"
