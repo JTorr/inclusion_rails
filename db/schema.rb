@@ -11,15 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140906140706) do
-
-  create_table "Projects_RubyGems", id: false, force: true do |t|
-    t.integer "project_id",  null: false
-    t.integer "ruby_gem_id", null: false
-  end
-
-  add_index "Projects_RubyGems", ["project_id", "ruby_gem_id"], name: "index_Projects_RubyGems_on_project_id_and_ruby_gem_id"
-  add_index "Projects_RubyGems", ["ruby_gem_id", "project_id"], name: "index_Projects_RubyGems_on_ruby_gem_id_and_project_id"
+ActiveRecord::Schema.define(version: 20140906153325) do
 
   create_table "favorites", force: true do |t|
     t.integer  "user_id"
@@ -30,6 +22,16 @@ ActiveRecord::Schema.define(version: 20140906140706) do
 
   add_index "favorites", ["ruby_gem_id"], name: "index_favorites_on_ruby_gem_id"
   add_index "favorites", ["user_id"], name: "index_favorites_on_user_id"
+
+  create_table "project_gems", force: true do |t|
+    t.integer  "ruby_gems_id"
+    t.integer  "projects_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "project_gems", ["projects_id"], name: "index_project_gems_on_projects_id"
+  add_index "project_gems", ["ruby_gems_id"], name: "index_project_gems_on_ruby_gems_id"
 
   create_table "projects", force: true do |t|
     t.string   "title"
