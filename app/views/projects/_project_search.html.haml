@@ -1,6 +1,9 @@
--@gem_data.each do |gem|
+-@projects.each do |project|
   %p
-    = form_tag gem_fetchers_path, method: :post do
-      = hidden_field_tag :name, gem["name"]
-      = hidden_field_tag :info, gem["info"]
-      = submit_tag gem["name"], class: "btn btn-link"
+    = form_tag projects_show_path, method: :post do
+      = hidden_field_tag :title, project["title"]
+      = hidden_field_tag :info, project["info"]
+      = submit_tag project["title"], class: "btn btn-link"
+
+
+#TODO: projects_show_path is not getting the project id

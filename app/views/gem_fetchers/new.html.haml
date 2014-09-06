@@ -1,10 +1,19 @@
-.form-search
-  =form_tag new_gem_fetcher_path, method: :get do
-    =label_tag :ruby_gem
-    =text_field_tag :ruby_gem
-    =submit_tag "Find Gem", class: "btn btn-info"
+
+
+
+.center.hero-unit
+  .form-search
+    =form_tag new_gem_fetcher_path, method: :get do
+      =label_tag :ruby_gem
+      =text_field_tag :ruby_gem
+      =submit_tag "Find Gem", class: "btn btn-danger"
+
+
 
 .row
   - if @gem_data
     %br
     = render partial: "search_results"
+  - else
+    %br
+    = link_to image_tag("inclusion.jpg", alt: "Rubies", class: "img-rounded")

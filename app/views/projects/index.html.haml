@@ -4,16 +4,17 @@
 %h3 Current Projects
 
 
+-if @projects
+  -@projects.each do |project|
+    %table.table.table-striped
+      %tbody
+        %tr
+          %td=link_to "#{project.title.capitalize}", projects_show_path
+        %tr
 
-%table.table.table-striped
-  %tbody
-    %tr
-      %td Project Name
-      %td Edit
-      %td Delete
-    %tr
-
-
--# -if @projects
--#   -@projects.each do |project|
 -# =link_to "#{project.name.capitalize}", projects_show_path
+
+.row
+  - if @projects
+    %br
+    = render partial: "project_search"

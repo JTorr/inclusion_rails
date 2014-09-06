@@ -16,7 +16,6 @@ class Project < ActiveRecord::Base
   def attach_gems
     @gem_list.each do |gem|
       self.ruby_gems.new GemApi.fetch gem
-
     end
   end
 end
