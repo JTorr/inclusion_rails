@@ -4,7 +4,7 @@ class FavoritesController < ApplicationController
   def index
     @favorites = current_user.favorites.all
   end
-  
+
   def create
     @gem_model = RubyGem.find(params[:id])
     current_user.favorites.create! ruby_gem: @gem_model
@@ -17,5 +17,4 @@ class FavoritesController < ApplicationController
     @favorite.destroy
     redirect_to gem_api_path(@gem_model)
   end
-
 end

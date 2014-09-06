@@ -2,6 +2,7 @@ class Project < ActiveRecord::Base
   belongs_to :user
   has_many :ruby_gems
 
+
   def parse(string)
     @gem_list = []
     lines = string.split("\n")
@@ -17,5 +18,4 @@ class Project < ActiveRecord::Base
       self.ruby_gems.new GemApi.fetch gem
     end
   end
-
 end

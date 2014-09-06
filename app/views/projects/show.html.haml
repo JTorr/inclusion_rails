@@ -1,2 +1,9 @@
 %h1 Projects#show
-%p Find me in app/views/projects/show.html.haml
+%p
+
+.row
+  - if @project
+    %br
+    = render partial: "project_search"
+  - else
+    Can't find @project

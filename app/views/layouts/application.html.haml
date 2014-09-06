@@ -15,6 +15,7 @@
     = favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72'
     = favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png'
     = favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
+    = stylesheet_link_tag "//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"
     = javascript_include_tag "application"
     = stylesheet_link_tag "//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"
 
@@ -25,12 +26,12 @@
           %span.icon-bar
           %span.icon-bar
           %span.icon-bar
-        %a.navbar-brand(href="#") InclusionRails
+        %a.navbar-brand(href= new_gem_api_path) InclusionRails
         .navbar-collapse.collapse.navbar-responsive-collapse
           %ul.nav.navbar-nav.pull-right
             - if current_user
-              %li= link_to "Favorites", "/path1"
-              %li= link_to "Projects", "/path2"
+              %li= link_to "Favorites", favorites_path
+              %li= link_to "Projects", projects_index_path
               %li= link_to "Sign Out", destroy_user_session_path, method: :delete
             - else
               / Not signed in
