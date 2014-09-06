@@ -1,6 +1,11 @@
 %h1 Add New Project
+%br
 .well.well-lg
   .form-search
     =form_tag projects_create_path, method: :get do
-      =text_area_tag :ruby_gem, "", :rows => "20", :cols => "130"
-      =submit_tag "Find Gem", class: "btn btn-info"
+      .well.well-sm
+        =text_field_tag :title, "", :size => "120", :placeholder => "Project Title"
+      .well.well-lg
+        =text_area_tag :ruby_gem, "", :rows => "20", :cols => "120",
+            :placeholder => "Paste your Gemfile here."
+        =submit_tag "Create Project", class: "btn btn-info"

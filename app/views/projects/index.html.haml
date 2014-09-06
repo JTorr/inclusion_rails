@@ -5,14 +5,8 @@
 
 
 -if @projects
-  -@projects.each do |project|
-    %table.table.table-striped
-      %tbody
-        %tr
-          %td= link_to project[:title], projects_show_path
-
-
-.row
-  - if @projects
-    %br
-    = render partial: "project_search"
+  %table.table.table-striped
+    %tbody
+    -@projects.each do |project|
+      %tr
+        %td= link_to "#{project[:title]}", projects_show_path
