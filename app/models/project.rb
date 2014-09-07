@@ -2,6 +2,7 @@ class Project < ActiveRecord::Base
   belongs_to :user
   has_many :project_gems
   has_many :ruby_gems, through: :project_gems
+  validates_uniqueness_of :project_gems
 
 
   def parse(string)
@@ -20,12 +21,14 @@ class Project < ActiveRecord::Base
     if @gem_data.ok?
       @gem_name = @gem_data["name"]
       @gem_info = @gem_data["info"]
-
       if RubyGem.in_db?(@gem_name)
         @gem_model = RubyGem.in_db @gem_name
-        self.ruby_gems << @gem_model.update(name: @gem_name, info: @gem_info)
+        @gem_model.update(name: @gem_name, info: @gem_info)
+        self.ruby_gems << @gem_model
+        self.save
       else
         @gem_model = self.ruby_gems << RubyGem.create(name: @gem_name, info: @gem_info)
+        self.save
       end
 
     else
