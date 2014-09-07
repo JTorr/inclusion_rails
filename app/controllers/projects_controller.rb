@@ -12,9 +12,8 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.new title: params[:title] gemfile: params[:gemfile]
-    gemfile = File.read(@project[:gemfile])
-    @project[:gemfile] = self.parse(gemfile)
+    @project = Project.new(title: params[:title])
+    @project.parse(params[:gemfile])
     @project.attach_gems
 
     if @project.save
