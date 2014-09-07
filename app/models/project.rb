@@ -46,11 +46,11 @@ class Project < ActiveRecord::Base
           self.save
         end
 
-      else
-        raise "The ruby gems api raised the following code: #{gem_data.code}."
-      end
+    else
+      raise "The ruby gems api raised the following code: #{gem_data.code}."
     end
   end
+end
 
   def attach_gems
     self.ruby_gems.delete_all
