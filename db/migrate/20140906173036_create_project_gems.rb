@@ -1,8 +1,9 @@
 class CreateProjectGems < ActiveRecord::Migration
   def change
     create_table :project_gems do |t|
-      t.references :ruby_gems, index: true
-      t.references :projects, index:true
+      t.references :project, index: true
+      t.references :ruby_gem, index: true
+
       t.timestamps
     end
   end

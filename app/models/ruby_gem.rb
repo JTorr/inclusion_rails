@@ -12,4 +12,14 @@
 class RubyGem < ActiveRecord::Base
   validates_uniqueness_of :name
   has_many :favorites
+  has_many :project_gems
+  has_many :projects, through: :project_gems
+
+  def self.in_db(gem)
+    find_by_name(gem)
+  end
+
+  def self.in_db?(gem)
+    find_by_name(gem).present?
+  end
 end
