@@ -2,8 +2,8 @@
 %p
 
 .row
-  - if @project
+  - @project = current_user.projects.last
+  = @project.title
+  - @project.project_gems.each do |rgem|
     %br
-    = render partial: "project_search"
-  - else
-    Can't find @project
+    = rgem.ruby_gem[:name]

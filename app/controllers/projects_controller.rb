@@ -1,10 +1,13 @@
 class ProjectsController < ApplicationController
+  before_filter :authenticate_user!
+  
   def index
     @projects = Project.all
   end
 
   def show
-    @project = Project.where(title: [:title]).first
+    # @project = Project.find params[:title]
+    @project = Project.where(title: params[:title])#.first
   end
 
   def new
@@ -12,9 +15,10 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.new(title: params[:title])
+    @project = current_user.projects.new(title: params[:title])
     @project.parse(params[:gemfile])
     @project.attach_gems
+    # @project.user_id = current_user.id
 
     if @project.save
       redirect_to projects_show_path(@project), notice: "Project Stored"
