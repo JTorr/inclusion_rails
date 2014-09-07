@@ -1,9 +1,8 @@
-%h1 Projects#show
-%p
-
-.row
-  - @project = current_user.projects.last
-  = @project.title
-  - @project.project_gems.each do |rgem|
-    %br
-    = rgem.ruby_gem[:name]
+- @project = current_user.projects.last
+%h1=@project.title.capitalize
+%table.table.table-striped
+  %tbody
+    -@project.project_gems.each do |rgem|
+      %tr
+        %td=rgem.ruby_gem[:name]
+        %td=rgem.ruby_gem[:info]
