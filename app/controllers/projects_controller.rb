@@ -12,7 +12,11 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.new title: params[:title]
+    @project = Project.new title: params[:title] gemfile: params[:gemfile]
+    gemfile = File.read(@project[:gemfile])
+    @project[:gemfile] = self.parse(gemfile)
+    @project.attach_gems
+
     if @project.save
       redirect_to projects_show_path(@project), notice: "Project Stored"
     end

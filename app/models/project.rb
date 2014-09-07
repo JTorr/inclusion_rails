@@ -16,8 +16,9 @@ class Project < ActiveRecord::Base
 
   def attach_gems
     @gem_list.each do |gem|
-    @gem_data =  GemApi.fetch gem
-    @gem_model = self.ruby_gems.new name: @gem_data["name"], info: @gem_data["info"]
-    @gem_model.save
+      @gem_data =  GemApi.fetch gem
+      @gem_model = self.ruby_gems.new name: @gem_data["name"], info: @gem_data["info"]
+      @gem_model.save
+    end
   end
 end
