@@ -6,3 +6,17 @@
       %tr
         %td=rgem.ruby_gem[:name]
         %td=rgem.ruby_gem[:info]
+        -@gem_model = rgem.ruby_gem
+        - if current_user.has_favorited?(@gem_model)
+          %td
+            = form_tag favorite_path(@gem_model), method: :delete do
+              = hidden_field_tag :id, @gem_model.id
+              = button_tag(type: 'submit', class: "btn btn-success") do
+                %i.fa.fa-star-o
+
+        - else
+          %td
+            = form_tag favorites_path(@gem_model), method: :post do
+              = hidden_field_tag :id, @gem_model.id
+              = button_tag(type: 'submit', class: "btn btn-default") do
+                %i.fa.fa-star-o
