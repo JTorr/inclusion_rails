@@ -4,8 +4,8 @@
   %tbody
     -@project.project_gems.each do |rgem|
       %tr
-        %td=rgem.ruby_gem[:name]
-        %td=rgem.ruby_gem[:info]
+        %td=rgem.ruby_gem.name.capitalize
+        %td=rgem.ruby_gem.info
         -@gem_model = rgem.ruby_gem
         - if current_user.has_favorited?(@gem_model)
           %td

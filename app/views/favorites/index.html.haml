@@ -1,12 +1,21 @@
 %h1 Favorites
 -if @favorites
   %table.table.table-striped
+    %thead
+      %th Gem
+      %th Description
+      %th Unfavorite
     %tbody
     -@favorites.each do |fav|
       %tr
-        %td Gem
         %td=fav.ruby_gem.name.capitalize
-      %tr
-        %td Description
         %td=fav.ruby_gem.info
+        -@gem_model = fav.ruby_gem
+        - if current_user.has_favorited?(@gem_model)
+          %td
+            = form_tag favorite_path(@gem_model), method: :delete do
+              = hidden_field_tag :id, @gem_model.id
+              = button_tag(type: 'submit', class: "btn btn-danger") do
+                %i.fa.fa-times
+
       %tr
