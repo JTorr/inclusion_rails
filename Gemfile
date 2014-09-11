@@ -52,6 +52,11 @@ group :test, :development do
   gem "capybara"
 end
 
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
 gem "haml-rails"
 gem "erb2haml"
 gem "devise"
