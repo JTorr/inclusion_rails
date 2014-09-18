@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   before_filter :authenticate_user!
-  
+
   def index
     @projects = Project.all
   end
@@ -15,7 +15,7 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = current_user.projects.new(title: params[:title])
+    @project = current_user.projects.new(title: params[:title] )
     @project.parse(params[:gemfile])
     @project.attach_gems
     # @project.user_id = current_user.id
