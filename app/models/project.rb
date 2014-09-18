@@ -14,6 +14,17 @@ class Project < ActiveRecord::Base
     end
   end
 
+def get_gem_info(gem)
+  gem_data =  GemApi.fetch gem
+
+  if gem_data.ok? # ok means returned code 200
+    @gem_name = gem_data["name"]
+    @gem_info = gem_data["info"]
+  end
+end
+
+
+
   def attach_gem(gem)
     gem_data =  GemApi.fetch gem
 
