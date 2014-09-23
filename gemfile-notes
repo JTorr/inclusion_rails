@@ -1,72 +1,72 @@
 rails
 Ruby on Rails is a full-stack web framework optimized for programmer happiness and sustainable productivity. It encourages beautiful code by favoring convention over configuration.
-========================================
+===========================================================================
 sass-rails
 Sass adapter for the Rails asset pipeline.
-========================================
+===========================================================================
 uglifier
 Uglifier minifies JavaScript files by wrapping UglifyJS to be accessible in Ruby
-========================================
+===========================================================================
 coffee-rails
 CoffeeScript adapter for the Rails asset pipeline.
-========================================
+===========================================================================
 haml-rails
 Haml-rails provides Haml generators for Rails 3. It also enables Haml as the templating engine for you, so you don't have to screw around in your own application.rb when your Gemfile already clearly indicated what templating engine you have installed. Hurrah.
-========================================
+===========================================================================
 jquery-rails
 This gem provides jQuery and the jQuery-ujs driver for your Rails 3+ application.
-========================================
+===========================================================================
 jbuilder
 Create JSON structures via a Builder-style DSL
-========================================
+===========================================================================
 sdoc
 rdoc generator html with javascript search index.
-========================================
+===========================================================================
 devise
 Flexible authentication solution for Rails with Warden
-========================================
+===========================================================================
 cancancan
 Continuation of the simple authorization solution for Rails which is decoupled from user roles. All permissions are stored in a single location.
-========================================
+===========================================================================
 better_errors
 Provides a better error page for Rails and other Rack apps. Includes source code inspection, a live REPL and local/instance variable inspection for all stack frames.
-========================================
+===========================================================================
 binding_of_caller
 Retrieve the binding of a method's caller. Can also retrieve bindings even further up the stack.
-========================================
+===========================================================================
 pry-rails
 Use Pry as your rails console
-========================================
+===========================================================================
 quiet_assets
 Quiet Assets turns off Rails asset pipeline log.
-========================================
+===========================================================================
 spring
 Rails application preloader
-========================================
+===========================================================================
 spring-commands-rspec
 rspec command for spring
-========================================
+===========================================================================
 sqlite3
 This module allows Ruby programs to interface with the SQLite3
 database engine (http://www.sqlite.org).  You must have the
 SQLite engine installed in order to build this module.
 
 Note that this module is only compatible with SQLite 3.6.16 or newer.
-========================================
+===========================================================================
 factory_girl_rails
 factory_girl_rails provides integration between
     factory_girl and rails 3 (currently just automatic factory definition
     loading)
-========================================
+===========================================================================
 rspec-rails
 RSpec for Rails
-========================================
+===========================================================================
 capybara
 Capybara is an integration testing tool for rack based web applications. It simulates how a user would interact with a website
-========================================
+===========================================================================
 launchy
 Launchy is helper class for launching cross-platform applications in a fire and forget manner. There are application concepts (browser, email client, etc) that are common across all platforms, and they may be launched differently on each platform. Launchy is here to make a common approach to launching external application from within ruby programs.
-========================================
+===========================================================================
 simplecov
 Code coverage for Ruby 1.9+ with a powerful configuration library and automatic merging of coverage across test suites
-========================================
+===========================================================================
