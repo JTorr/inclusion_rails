@@ -1,4 +1,5 @@
 INCLUSION RAILS README
+<a href="https://codeclimate.com/github/JTorr/inclusion_rails"><img src="https://codeclimate.com/github/JTorr/inclusion_rails/badges/gpa.svg" /></a>
 ======
 
 What is It?
