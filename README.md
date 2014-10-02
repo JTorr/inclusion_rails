@@ -1,5 +1,7 @@
 <a href="https://codeclimate.com/github/JTorr/inclusion_rails"><img src="https://codeclimate.com/github/JTorr/inclusion_rails/badges/gpa.svg" /></a>
 
+WORK IN PROGRESS: PLEASE WEAR HARDHAT IN THIS CONSTRUCTION ZONE
+======
 
 INCLUSION RAILS README
 ======
@@ -25,6 +27,9 @@ pulling in the most current information for the included gems.
 
 Installation
 ----------------
+
+**This application uses Postgres. You must have that installed and open to run the app.
+
 First, clone the project:
 
 ```
@@ -50,7 +55,7 @@ Running the Application:
 Option 1: Run as a Rails App
 
 ```
-rails s
+bundle exec rails s
 ```
 
 Option 2: Run in Command Line
@@ -67,10 +72,12 @@ rake read < ../your_project_name/Gemfile > gemfile-notes
 Feedback and Future Development
 ----
 
-Features planned for future development:
+Features & Fixes planned for future development:
 
+* Add feature to output Gemfile based on favorited gems
+* Finish filling out test suite
+* Improve UX with better navigation & more fancy-shmanciness
 * Bring in additional info on gems: gem_uri, version, dependencies, etc.
 * Additional rake tasks
-
 
 All bugs, feature requests, pull requests, feedback, etc., are welcome.
